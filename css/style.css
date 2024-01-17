@@ -1,0 +1,8 @@
+.box-1 {
+    background-color: aqua;
+    width: 40%;
+    height: 80%;
+    display: block;
+    text-align: center;
+    margin: 0 30%;
+}
