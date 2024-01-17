@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>発車ベル</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="station">
+        <a href="/html/JR-SH2.html">JR-SH2</a>
+        <a href="/html/kitijyouji.html">吉祥寺（立川式）</a>
+    </div>
+
+    <div id="imageContainer" style="position: relative;">
+        <div id="clickableArea1" class="clickableArea" onclick="playSound('/audio/大宮駅 4番線発車メロディ｢Verde Rayo｣(フル).mp3')"></div>
+        <div id="clickableArea2" class="clickableArea" onclick="playSound('/audio/2大宮駅 4番線発車メロディ｢Verde Rayo｣(フル) (1).mp3')"></div>
+        <img src="/img/発車ベル1.00.jpg" alt="Clickable Image">
+    </div>
+
+    <div id="stopButton" onclick="stopAllSounds()">強制<br>停止</div>
+
+    <audio id="clickSound1" src="/audio/大宮駅 4番線発車メロディ｢Verde Rayo｣(フル).mp3"></audio>
+    <audio id="clickSound2" src="/audio/2大宮駅 4番線発車メロディ｢Verde Rayo｣(フル) (1).mp3"></audio>
+
+
+    <script src="/js/omiya.js"></script>
+    <script src="/js/stop.js"></script>
+
+</body>
+
+</html>

@@ -1,8 +1,54 @@
-.box-1 {
-    background-color: aqua;
-    width: 40%;
-    height: 80%;
-    display: block;
+
+
+#imageContainer {
+    position: relative;
     text-align: center;
-    margin: 0 30%;
+}
+
+.clickableArea {
+    position: absolute;
+    cursor: pointer;
+}
+
+#clickableArea1 {
+    top: 41%;
+    left: 46.6%;
+    width: 6%;
+    height: 15%;
+}
+
+#clickableArea2 {
+    top: 63%;
+    left: 46.6%;
+    width: 6%;
+    height: 15%;
+}
+
+img {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    height: auto;
+}
+
+#stopButton {
+    cursor: pointer;
+    display: inline-block;
+    width: 90px; /* ボタンの幅を変更 */
+    height: 80px; /* ボタンの高さを変更 */
+    padding-top: 15px;
+    font-size: 28px;
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+    background-color: rgb(247, 73, 73);
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    background: rgba(255, 0, 0, 0.7);
+}
+
+.station {
+    display: flex;
+    flex-direction: column;
 }
