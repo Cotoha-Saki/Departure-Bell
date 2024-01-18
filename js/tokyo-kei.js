@@ -5,39 +5,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const clickSound1 = document.getElementById('clickSound1');
     const clickSound2 = document.getElementById('clickSound2');
     const clickSound3 = document.getElementById('clickSound3');
+    const clickSound4 = document.getElementById('clickSound4');
     let isClickSound1Playing = false;
 
     clickableArea1.addEventListener('click', function () {
         if (!isClickSound1Playing) {
             isClickSound1Playing = true;
-
-            // 同時に1と2を再生
-            playSounds([clickSound1, clickSound2]);
+            stopSound(clickSound2);
+            playSounds([clickSound1, clickSound3]);
 
             // clickableArea1のボタンをクリックしたときに中央に向かって小さくする
             adjustSize(clickableArea1);
-
-            // 1つ目の音が再生し終わった後にループ再生
-            clickSound1.addEventListener('ended', function () {
-                clickSound1.setAttribute('loop', 'true');
-            });
         }
     });
 
     clickableArea2.addEventListener('click', function () {
         if (isClickSound1Playing) {
-            stopLooping(clickSound1); // ループ再生を解除
+            stopSound(clickSound1);
             isClickSound1Playing = false;
+            playSounds([clickSound2, clickSound4]);
 
             // clickableArea2のボタンをクリックしたときに中央に向かって小さくする
             adjustSize(clickableArea2);
 
-            // 2つ目の音を再生
-            playSound(clickSound3);
-
             // 0.5秒後に元のサイズに戻す
             setTimeout(function () {
                 resetSize(clickableArea2);
+
+                // clickableArea1のボタンも元のサイズに戻す
                 resetSize(clickableArea1);
             }, 100);
         }
@@ -57,20 +52,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function playSound(audioElement) {
-        audioElement.currentTime = 0;
-        audioElement.play().catch(function (error) {
-            console.error('音声再生エラー:', error.message);
-        });
-    }
-
     function stopSound(audioElement) {
         audioElement.pause();
         audioElement.currentTime = 0;
-    }
-
-    function stopLooping(audioElement) {
-        audioElement.removeAttribute('loop');
     }
 
     function stopAllSounds() {
@@ -92,3 +76,9 @@ document.addEventListener('DOMContentLoaded', function () {
         element.style.transform = '';
     }
 });
+
+
+
+
+
+

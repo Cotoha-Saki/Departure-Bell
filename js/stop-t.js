@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const clickableArea2 = document.getElementById('clickableArea2');
     const clickableArea3 = document.getElementById('clickableArea3');
     const audio1 = document.getElementById('clickSound1');
+    let currentVolume = 0.7; // 初期音量
 
     clickableArea1.addEventListener('click', function () {
         startLoop(audio1);
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function startLoop(audioElement) {
         // ループ再生を有効にして再生
         audioElement.loop = true;
+        audioElement.volume = currentVolume;
         audioElement.play();
     }
 
@@ -41,3 +43,4 @@ document.addEventListener('DOMContentLoaded', function () {
         audioElement.currentTime = 0;
     }
 });
+

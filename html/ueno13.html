@@ -10,29 +10,28 @@
 </head>
 
 <body>
-
     <div class="station">
+        <a href="/html/JR-SH2.html">JR-SH2</a>
         <a href="/html/kitijyouji.html">吉祥寺（立川式）</a>
         <a href="/html/omiya4.html">大宮（4番線 / 湘南新宿ライン）</a>
-        <a href="/html/ueno13.html">上野（13番線）</a>
         <a href="/html/tokyo-kei.html">京葉線（東京駅）</a>
     </div>
 
     <div id="imageContainer" style="position: relative;">
-        <div id="clickableArea1" class="clickableArea" onclick="playSound('/audio/JR-SH2.mp3')"><img src="/img/on.png" alt=""></div>
-        <div id="clickableArea2" class="clickableArea" onclick="playSound('/audio/door.mp3')"><img src="/img/off.png" alt=""></div>
+        <div id="clickableArea1" class="clickableArea" onclick="playSound('/audio/3上野駅.mp3')"><img src="/img/on.png" alt=""></div>
+        <div id="clickableArea2" class="clickableArea" onclick="playSound('/audio/4上野駅.mp3')"><img src="/img/off.png" alt=""></div>
         <img src="/img/発車ベル1.00.png" alt="Clickable Image">
     </div>
 
-    <audio id="clickSound1" src="/audio/JR-SH2.mp3" loop></audio>
-    <audio id="clickSound2" src="/audio/door.mp3"></audio>
+    <audio id="clickSound1" src="/audio/3上野駅.mp3" loop></audio>
+    <audio id="clickSound2" src="/audio/4上野駅.mp3"></audio>
     <audio id="clickSound3" src="/audio/シーケンス02.mp3"></audio>
     <audio id="clickSound4" src="/audio/シーケンス01.mp3"></audio>
+    
+    
 
-
-    <script src="/js/JR-SH2.js"></script>
+    <script src="/js/ueno13.js"></script>
     <script src="/js/stop.js"></script>
-
 </body>
 
 </html>
